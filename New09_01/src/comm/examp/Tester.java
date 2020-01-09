@@ -6,7 +6,7 @@ package comm.examp;
 	import java.util.Set;
 
 	public class Tester {
-		private static Scanner scanner=new Scanner(System.in);
+		private  Scanner scanner=new Scanner(System.in);
 		
 		private  ToDoService service=null;
 		
@@ -24,6 +24,8 @@ package comm.examp;
 			System.out.println("3. find todo");
 			System.out.println("4. remove todo");
 			System.out.println("5. delete all todo");
+			System.out.println("6. update todo");
+			
 			System.out.println("0. exit");
 			System.out.print("Enter your choice: ");
 			try {
@@ -61,6 +63,20 @@ package comm.examp;
 				tester.service.removeAllToDo();
 				System.out.println("batch remove sucessfull");
 				break;
+				case 6:
+				{
+					System.out.println("enter the toodoID");
+					String  st = Scanner.next();
+					System.out.println("Enter the update");
+					String st1 = Scanner.next();
+					tester.service.updatebyid(st , st1);
+					break;
+					
+					
+					
+					
+					
+				}
 			case 0:
 				System.out.println("bye");
 				System.exit(0);

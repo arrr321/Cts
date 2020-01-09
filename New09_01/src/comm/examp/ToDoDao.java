@@ -10,6 +10,8 @@ package comm.examp;
 		public ToDo findById(String toDoId);
 		void removeAllToDo();
 		void deleteToDo(String toDoId);
+		void updateId(String toDoId , String data);
+		
 		
 		
 

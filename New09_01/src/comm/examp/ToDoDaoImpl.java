@@ -69,6 +69,19 @@ package comm.examp;
 			toDoList.removeAll(toDoList);
 			
 		}
+		@Override
+		
+		public void updateId( String updateId, String data)
+		
+		{
+			ToDo obj =  findById(updateId);
+			int index = toDoList.indexOf(findById(updateId));
+			obj.setToDoName(data);
+			toDoList.set(index,obj );
+			
+			
+			
+		}
 		
 		
 		
