@@ -9,7 +9,7 @@ public interface ToDoService {
 	public ToDo findById(String toDoId);
 	public void deleteToDo(String toDoId);
 	public void removeAllToDo();
-	public void updatebyid(String toDoId , String data);
+	public  void updatebyid(String toDoId , String data);
 	
 
 }

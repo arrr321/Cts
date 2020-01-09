@@ -6,7 +6,7 @@ package comm.examp;
 	import java.util.Set;
 
 	public class Tester {
-		private  Scanner scanner=new Scanner(System.in);
+		private static Scanner scanner=new Scanner(System.in);
 		
 		private  ToDoService service=null;
 		
