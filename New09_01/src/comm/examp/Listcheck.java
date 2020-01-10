@@ -23,7 +23,7 @@ public class Listcheck {
 		obj1.add(30);
 		obj1.add(200);
 		System.out.println(obj1);
-		System.out.println(Collections.binarySearch(obj1, 30));
+		System.out.println(Collections.binarySearch(obj1, 200));
 		System.out.println(obj1.get(2));
 		
 		
