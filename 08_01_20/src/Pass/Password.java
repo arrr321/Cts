@@ -37,7 +37,7 @@ private	String password;
 					
 				
 				
-			}else {
+			} {
 				result = true;
 			}
 		}

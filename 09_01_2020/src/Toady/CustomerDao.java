@@ -19,6 +19,12 @@ public class CustomerDao {
 		customerSet.add(new Customer(customerId , firstName , lastName , email));
 		
 	}
+
+
+	public Set<Customer> getAllCustomers(CustomerDao customerDao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

@@ -20,8 +20,8 @@ public class Handle {
 		
 }
 	
-	*/	
-	public void doTheWork()
+	
+	public  doTheWork()
 	{
 		
 		
@@ -33,20 +33,23 @@ public class Handle {
 	            } catch (IllegalArgumentException e) {
 	            	e.printStackTrace();
 	                System.err.println("IllegalArgumentException is caught: (" + e.getMessage() + ").");
-	                return;    
+	                   
 	            }
-	            System.out.println(o);
-		
 }
 	}
-	            public Object makeObj( int type) throws IllegalArgumentException
+	    /*        Object  throws IllegalArgumentException
 	            {
 	            	if(type == 1)
 	            	throw new IllegalArgumentException("don't like type :" + type);
 	            	
 	            	return Object();
 	            	
-	            }
+	            }*/
 	            
-	}ch
+	}
+
+	private static Object makeObj(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

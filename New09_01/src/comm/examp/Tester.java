@@ -65,11 +65,7 @@ package comm.examp;
 				break;
 				case 6:
 				{
-					System.out.println("enter the toodoID");
-					String  st = Scanner.next();
-					System.out.println("Enter the update");
-					String st1 = Scanner.next();
-					tester.service.updatebyid(st , st1);
+					
 					break;
 					
 					
