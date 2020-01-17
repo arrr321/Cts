@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.java</groupId>
-  <artifactId>Customerdemo</artifactId>
+  <artifactId>Springdemo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>Customerdemo</name>
+  <name>Springdemo</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -43,6 +43,7 @@
     <artifactId>spring-core</artifactId>
     <version>5.2.3.RELEASE</version>
 </dependency>
+    
     
   </dependencies>
 
