@@ -14,7 +14,7 @@
    
    <bean name="thecoach" class="com.java.Customerdemo.BaseBallCoach">
    <constructor-arg name="fortuneservice" ref="myfortuneservice">
-   
+  
    
    </constructor-arg>
    </bean>
