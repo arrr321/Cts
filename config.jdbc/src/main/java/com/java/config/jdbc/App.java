@@ -10,9 +10,9 @@ public class App
 {
     public static void main( String[] args )
     {
-    	AnnotationConfigApplicationContext context=
-     		   new AnnotationConfigApplicationContext(CustomerConfig.class);
-        Customer c=context.getBean("customer",Customer.class);
+    	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(CustomerConfig.class);
+        Customer c = context.getBean("customer" , Customer.class);
+    
         c.setUid("100");
         c.setFirstName("John");
         c.setLastName("Doe");
@@ -20,4 +20,4 @@ public class App
         System.out.println(c);
         
     }
-    }
+}

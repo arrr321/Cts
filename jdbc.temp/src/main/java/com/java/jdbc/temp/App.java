@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.context.ApplicationContext;
@@ -34,7 +35,7 @@ public class App
 	}
 	
 	int choice=-1;
-	String uId,firstName,lastName,email=null;
+	String id,firstName,lastName,email=null;
 	do {
 		System.out.println("1. create customer.");
 		System.out.println("2. display all customer.");
@@ -51,15 +52,14 @@ public class App
 			lastName=br.readLine();
 			System.out.print("email>> ");
 			email=br.readLine();
-			String id = null;
-			//String[] arr=UUID.randomUUID().toString().split("-");
-		//	uId=arr[0]+arr[1];
-			service.createCustomer(new Customer(id, firstName, lastName, email));
+			String id1 = null;
+			String[] arr=UUID.randomUUID().toString().split("-");
+			id1=arr[0]+arr[1];
+			service.createCustomer(new Customer(id1, firstName, lastName, email));
 			break;
-		}
 	
 		
-			/*case 2:
+			case 2:
 			List<Customer> l=service.getAllCustomers();
 			System.out.format("%-20s%-20s%-20s%-20s\n", "ID","FIRST_NAME","LAST_NAME","EMIL");
 			l.forEach(c->{
@@ -68,8 +68,8 @@ public class App
 			break;
 		case 3:
 			System.out.print("uid>> ");
-			uId=br.readLine();
-		//	l=service.getCustomerById(uId);
+			id1=br.readLine();
+		l=service.getCustomerById(id1);
 			if(l.isEmpty())
 			{
 				System.out.println("customer not found");
@@ -84,8 +84,8 @@ public class App
 			break;
 		case 4:
 			System.out.print("uid>> ");
-			uId=br.readLine();
-			//l=service.getCustomerById(uId);
+			id1=br.readLine();
+			l=service.getCustomerById(id1);
 			if(l.isEmpty())
 			{
 				System.out.println("customer not found");
@@ -98,16 +98,24 @@ public class App
 				});
 			}
 			break;
+		case 5:
+			System.out.println("enter id");
+			String id11 = br.readLine();
+			int i= service.deleteCustomer(id11);
+			System.out.println(i);
+			
 
 		default:
 			break;
-		}	*/
+		}	
 		
 	} while (choice !=0);
+    
+	}
+    }
 
 	
-    }
-}
+
 	
 	
 	

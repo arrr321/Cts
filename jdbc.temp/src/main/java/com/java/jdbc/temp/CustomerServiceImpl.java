@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 public class CustomerServiceImpl implements CustomerService {
 	CustomerDao2 Dao2;
+	private JdbcTemplate jdbcTemplate;
 	
 
 
@@ -34,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> getAllCustomers() throws SQLException {
 	String query  = "select(id ,first_name, last_name , email from Customer)";
 	
-		return null;
+		return Dao2.getAllCustomers();
 	}
 
 
@@ -53,9 +54,15 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 	@Override
-	public int deleteCustomer(String uId) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteCustomer(String id) throws SQLException {
+		
+		String query  = "delete from customer where id= ?";
+		
+		return jdbcTemplate.update(query , id);
+		
+		
+		
+		
 	}
 
 }
