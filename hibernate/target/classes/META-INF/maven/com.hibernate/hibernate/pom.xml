@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.hibernate</groupId>
-  <artifactId>persondemo</artifactId>
+  <artifactId>hibernate</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>persondemo</name>
+  <name>hibernate</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -25,7 +25,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-java8 -->
+      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-java8 -->
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-java8</artifactId>
