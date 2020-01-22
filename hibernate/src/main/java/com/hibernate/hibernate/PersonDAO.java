@@ -8,9 +8,9 @@ import java.util.List;
 public interface PersonDAO {
 
 	public Person createPerson(Person person);
-	public List<Person> getAllPersons();
-	public Person getPersonByid(Integer id);
-	public Person updatePerson(Integer id) throws IOException;
-	public void deletePerson(Integer id);
-
+//	public List<Person> getAllPersons();
+//	public Person getPersonByid(Integer id);
+//	public Person updatePerson(Integer id) throws IOException;
+//	public void deletePerson(Integer id);
+//
 }

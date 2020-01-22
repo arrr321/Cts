@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 public class App 
 {
+	
 	private static PersonService  personservice;
 	static
 	{
@@ -19,11 +20,11 @@ public class App
     public static void main( String[] args ) throws IOException
     { 
     	
-    	 Person p2=personservice.createPerson(new Person("100","Ram",LocalDate.now()));
-    	 System.out.println(p2);
-//    	Person p1 = personservice.getPersonByid(100);
+    	 Person p=personservice.createPerson(new Person("100","Ram",LocalDate.now()));
+    	 System.out.println(p);
+//         Person p1 = personservice.getPersonByid(100);
 //    	System.out.println(p1);
-    	
+//    	
     	
     	
     	

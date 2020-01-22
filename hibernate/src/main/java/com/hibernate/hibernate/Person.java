@@ -9,14 +9,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import lombok.Setter;
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Data
 @NoArgsConstructor
 public class Person {
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String uId;
 	@Column(name = "name")
@@ -28,6 +34,7 @@ public class Person {
 		this.uId = uId;
 		this.cName = cName;
 		this.dateOfBirth = dateOfBirth;
+	
 	}
 	public int getId() {
 		return id;
