@@ -11,11 +11,6 @@ import com.java.spring_hibernate.entity.UserDetail;
 public class UserDAOImpl implements  UserDAO{
 	SessionFactory sessionfactory;
 	Session session;
-	@Autowired
-	UserDAOImpl dao;
-	
-	
-	
 
 	public UserDAOImpl(Session session) {
 		super();

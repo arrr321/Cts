@@ -1,5 +1,6 @@
 package com.java.spring_hibernate;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,7 +9,7 @@ import com.java.spring_hibernate.entity.UserDetail;
 @Service("service")
 public class UserServiceImpl implements UserService{
 	
-	
+	@Autowired
 	private UserDAO dao;
 	
 	
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	@Transactional
 	public UserDetail createUser(UserDetail user) {
-		// TODO Auto-generated method stub
+	
 		return dao.createuser(user);
 	}
 
