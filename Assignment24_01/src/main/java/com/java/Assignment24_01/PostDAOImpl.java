@@ -29,4 +29,11 @@ public class PostDAOImpl implements PostDAO {
 		
 		return post ;
 }
+
+
+
+	public PostDAOImpl() {
+		
+	}
+	
 }

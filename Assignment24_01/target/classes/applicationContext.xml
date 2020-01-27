@@ -8,8 +8,7 @@
 <context:component-scan base-package="com.java.Assignment24_01"/>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
-	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-          destroy-method="close">
+	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
        
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hr" />
         <property name="user" value="root" />
@@ -22,8 +21,7 @@
 	</bean>  
 	
     <!-- Step 2: Setup Hibernate session factory -->
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"/>
 		<property name="dataSource" ref="myDataSource" />
 		<property name="packagesToScan" value="com.java.Assignment24_01" />
 		<property name="hibernateProperties">
@@ -36,8 +34,8 @@
    </bean>	  
 
     <!-- Step 3: Setup Hibernate transaction manager -->
-	<bean id="myTransactionManager"
-            class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	<bean id= "myTransactionManager"
+            class= "org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
