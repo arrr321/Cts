@@ -1,6 +1,7 @@
 package crm;
 
 import java.io.IOException;
+import java.util.UUID;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ public class CustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private CustomerService service;
+	private CustomerDtoImpl impl;
 	
 	
    
@@ -21,6 +23,7 @@ public class CustomerController extends HttpServlet {
 	
 		super.init();
 		service = new CustomerServiceImpl();
+		impl = new Customermapper();
 	}
 
 
@@ -43,14 +46,14 @@ public class CustomerController extends HttpServlet {
 	 String lName = request.getParameter("lName");
 	 String email = request.getParameter("email");
 	 
-	 Customer dto = new Customer(fName, lName, email);
-	 Customer customer = service.createCustomer(dto);
+	 CustomerDto dto = new CustomerDto(UUID.randomUUID().toString(),fName, lName, email);
+	 Customer customer = service.createCustomer(impl.customerDtoToCustomer(dto));
 	 
 	 if (customer!= null)
 	 {
 		 
 		 request.setAttribute("SUCCESS", customer);
-		 RequestDispatcher view = request.getRequestDispatcher("success.view");
+		 RequestDispatcher view = request.getRequestDispatcher("HomeController.do");
 		 view.forward(request, response);
 		 
 		 
