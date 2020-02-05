@@ -42,6 +42,15 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	public Book(String bookName, String author) {
+		super();
+		this.bookName = bookName;
+		this.author = author;
+	}
+	public Book() {
+		super();
+	}
+	
 
 	
 	

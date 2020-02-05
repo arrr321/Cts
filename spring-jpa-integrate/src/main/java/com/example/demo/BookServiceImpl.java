@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BookServiceImpl implements BookService {
 	
 	public BookDAO bookdao;
@@ -19,7 +21,7 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<Book> getAllbook() {
 		
-		return bookdao.getAllbook();
+		return ((BookServiceImpl) bookdao).getAllbook();
 	}
 
 	@Override
@@ -27,6 +29,14 @@ public class BookServiceImpl implements BookService {
 
 		Optional<Book> book=bookdao.findById(bookID);
 		return book;
-
+		
+		
+	
 }
+
+	@Override
+	public Book createBook(Book book) {
+		// TODO Auto-generated method stub
+		return bookdao.save(book);
+	}
 }

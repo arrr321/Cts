@@ -1,0 +1,1 @@
+insert into Book(author , book_name) values ('Manu' , 'Dumb');

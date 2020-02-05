@@ -1,13 +1,17 @@
 package com.example.demo;
 
-import java.util.List;
-import java.util.Optional;
 
-public interface BookDAO {
 
-	public List<Book> getAllbook();
-	public Optional<Book> getBookById(int bookID);
-	public Optional<Book> findById(int bookID);
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Transactional
+public interface BookDAO extends JpaRepository<Book, Integer> {
+
+	
 
 }
 
