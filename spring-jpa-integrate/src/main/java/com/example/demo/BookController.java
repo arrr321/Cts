@@ -3,13 +3,17 @@ package com.example.demo;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,10 +50,12 @@ public class BookController {
 	}
 	
 	@GetMapping("/books")
+	@Transactional
 	public List<Book> getAll()
 	{
 		return bookservice.getAllbook();
 	}
+	@Transactional
 	@GetMapping("/books/{bookId}")
 	public Optional<Book> getBookById(@PathVariable Integer bookId) throws Exception
 	{
@@ -61,7 +67,7 @@ public class BookController {
 		
 		return book; 
 	}
-	@PostMapping
+	@PostMapping("/books")
 	public Book createBook(@RequestBody Book book)
 	{
 		
@@ -69,14 +75,48 @@ public class BookController {
 		
 		
 		return bookservice.createBook(book);
+	}
 		
 		
+	
+	@PutMapping("/books")
+	public Book updateBook(@RequestBody Book book)
+	{
+		return bookservice.createBook(book);
 		
 	}
 	
+	@DeleteMapping("/books/{bookId}")
+	public void deleteById(@PathVariable Integer bookId)
+	{
+		bookservice.deleteBookByid(bookId);
+		
+		
+	}
+	@DeleteMapping("/books")
+	public void deleteAll()
+	{
+		
+		bookservice.deleteAll();
+	}
+	
+	@GetMapping("books/findByAuthor/{author}")
+	public List<Book> findByauthor(@PathVariable String author)
+	{
+		return bookservice.findByauthor(author);
+		
+	}
+	
+	@GetMapping("books/findByBook/{bookName}")
+	public List<Book> findBybookName(@PathVariable String bookName)
+	{
+		return bookservice.findBybookName(bookName);
+	
+
 }
+
 	
-	
+}
 	
 
 

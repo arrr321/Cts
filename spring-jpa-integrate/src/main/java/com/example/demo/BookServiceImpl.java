@@ -39,4 +39,29 @@ public class BookServiceImpl implements BookService {
 		// TODO Auto-generated method stub
 		return bookdao.save(book);
 	}
+
+	@Override
+	public void deleteAll() {
+		bookdao.deleteAll();
+		
+	}
+
+	@Override
+	public void deleteBookByid(Integer bookId) {
+		bookdao.deleteById(bookId);
+		
+	}
+
+	@Override
+	public List<Book> findByauthor(String author) {
+		// TODO Auto-generated method stub
+		return bookdao.findByauthor(author);
+	}
+
+	@Override
+	public List<Book> findBybookName(String bookName) {
+		// TODO Auto-generated method stub
+		return bookdao.findBybookName(bookName);
+	}
+
 }
