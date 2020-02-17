@@ -13,5 +13,7 @@ public interface ItemService {
 	public Item createItem(Item item);
 	public Optional<Item> findByitemName(String itemName);
 	public void deleteByitemName(String itemName);
+	public Optional<Item> findByid(String id);
+	public Optional<Item> findById(String itemId);
 
 }

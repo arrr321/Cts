@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,7 @@ public class ItemServiceImpl implements ItemService{
 	@Override
 	public Item createItem(Item item) {
 		
+		
 		return itemRepository.insert(item) ;
 	}
 
@@ -40,6 +42,18 @@ public class ItemServiceImpl implements ItemService{
 		 itemRepository.deleteByitemName(itemName);
 		
 		 
+	}
+
+	@Override
+	public Optional<Item> findByid(String id) {
+		
+		return itemRepository.findById(id);
+	}
+
+	@Override
+	public Optional<Item> findById(String itemId) {
+		// TODO Auto-generated method stub
+		return itemRepository.findById(itemId);
 	}
 
 }

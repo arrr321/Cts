@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,7 @@ public class RestController {
 	@PostMapping("/item")
 	public Item createItem(@RequestBody Item item)
 	{
+		item.setDate(LocalDate.now());
 		return itemRepository.insert(item);
 		
 		
@@ -55,4 +57,20 @@ public class RestController {
 		itemRepository.deleteByitemName(bookName);
 	}
 	
+	@GetMapping("id/{id}")
+	public Optional<Item> findByid(@PathVariable String id)
+	
+	
+	{
+		return itemRepository.findByid(id);
+		
+	}
+	@GetMapping("ssn/{itemId}")
+	public Optional<Item> findById(@PathVariable String itemId)
+	
+	
+	{
+		return itemRepository.findByid(itemId);
+		
+	}
 }

@@ -1,0 +1,26 @@
+
+<h1>Employees</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id </th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+        </tr>
+
+
+
+    </thead>
+        <tbody>
+            <tr *ngFor="let e of employees1">
+                <td>{{ e.eid }}</td>
+                <td>{{ e.ename | title: e.egender}}</td>
+                <td>{{ e.esalary | currency: '$' }}</td>
+                <td>{{ e.egender}}</td>
+            </tr>
+        </tbody>
+
+
+</table>
