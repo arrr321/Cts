@@ -1,0 +1,15 @@
+server:
+  port: 8090
+
+spring:  application:    name: user-service 
+  #h2:   # console:     # enabled: true
+     # settings:     #   web-allow-others: true
+     # path: /console
+  data:    mongodb:      host: loacalhost
+      port: 27017
+      database: user
+
+eureka:  client:    serviceUrl:
+     defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+          
