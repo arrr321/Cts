@@ -1,0 +1,21 @@
+
+
+
+
+
+<div class="container" style="text-align: center;">
+    <div class="row">
+        
+        <div class="card"  style="width: 16rem; margin: 5px;" *ngFor ="let product of products">
+            <img src="http://rjtmobile.com/grocery/images/{{product.image}}"class="card-img-top" alt="..."/>
+            <div class="card-body">
+                <h3 class="card-text">{{product.price | currency }}</h3>  
+                <button class="btn btn-secondary" (click)=addtoCart(product)>AddtoCart</button>
+                <h3 class="card-text">{{product.productName}}</h3>
+                <h3 class="card-text">{{product.productImage}}</h3>
+                <h3 class="card-text" style="font-size: small;">{{product.description}}</h3>
+            
+             
+        </div>
+        </div>
+        </div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Cart Items ({{cart.length}})</h2>
+<table class="table" style="font-size: 24px;" >
+  
+        <tbody>
+            <tr *ngFor ="let product of cart">
+                <td><img src="{{_img_url+product.image}}" width="100"></td>
+                <td>{{product.productName}}</td>
+                <td>{{product.unit}}</td>
+            </tr>
+        </tbody>
+   
+</table>

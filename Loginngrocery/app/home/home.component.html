@@ -1,0 +1,30 @@
+
+
+<div class="container">
+<h4 style="text-align: center;">All Catagories</h4>
+<br>
+<div class="row" >
+<div class="card" style="width: 16rem; margin: 5px;" *ngFor ="let catagory of cat" (click) = onSelectCat(catagory.catId)>
+    <img src="http://rjtmobile.com/grocery/images/{{catagory.catImage}}"class="card-img-top" alt="..."/>
+    <div class="card-body">
+        <h3 class="card-text">{{catagory.catName}}</h3>
+    </div>
+    </div>
+    
+
+    
+    </div>
+</div>
+<div class="container" style="text-align: left;">
+
+    <div class="card" style="width: 15rem;" *ngFor ="let subcatagory of subcat">
+       
+        <div class="card-body">
+            <h3 class="card-text">{{subcatagory.subName}}</h3>
+           
+        
+    </div>
+    </div>
+    </div>
+   
+    
